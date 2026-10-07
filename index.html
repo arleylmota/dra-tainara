@@ -1,28 +1,162 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f4f2ed"><meta name="description" content="Dra. Tainara Rodrigues — Ultrassonografia.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f2ed">
+<meta name="description" content="Dra. Tainara Rodrigues — Ultrassonografia — CRM-BA 43828.">
 <title>Dra. Tainara Rodrigues | Ultrassonografia</title>
 <style>
-:root{--bg:#f4f2ed;--ink:#1f2927;--muted:#68736f;--accent:#315c54;--accent2:#244942;--wa:#198754}
-*{box-sizing:border-box}html{min-height:100%;scroll-behavior:smooth}body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(circle at 50% -5%,#fff 0,#f7f5f1 35%,#e9e7e1 100%);display:flex;justify-content:center}
-main{width:100%;max-width:760px;min-height:100vh;padding:clamp(34px,7vh,72px) 24px 32px;display:flex;flex-direction:column;align-items:center}
-.profile{text-align:center;width:100%;max-width:560px}.avatar{width:200px;height:200px;border-radius:28px;margin:auto;overflow:hidden;box-shadow:0 20px 48px rgba(39,75,69,.16);border:4px solid rgba(255,255,255,.95);background:#e9ece9}.avatar img{width:100%;height:100%;display:block;object-fit:contain;object-position:center}
-h1{font-family:Georgia,serif;font-size:clamp(30px,5vw,42px);letter-spacing:-1px;line-height:1.1;margin:22px 0 9px;font-weight:600}.role{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.bio{font-size:15px;line-height:1.65;color:var(--muted);max-width:430px;margin:15px auto 30px}.links{width:100%;max-width:560px;display:grid;gap:14px}
-.link{min-height:58px;display:flex;align-items:center;justify-content:center;gap:11px;text-decoration:none;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2));padding:16px 22px;border-radius:18px;font-size:15px;font-weight:650;box-shadow:0 12px 30px rgba(39,75,69,.17);transition:transform .18s ease,box-shadow .18s ease}
-.link:hover{transform:translateY(-2px);box-shadow:0 17px 36px rgba(39,75,69,.22)}.link:focus-visible{outline:3px solid rgba(49,92,84,.28);outline-offset:4px}.icon{width:20px;height:20px;display:grid;place-items:center;font-size:18px}
-.link.whatsapp{background:linear-gradient(135deg,#20a862,#16834d);box-shadow:0 12px 30px rgba(25,135,84,.18)}
-.brand-logos{margin-top:34px;display:flex;align-items:center;justify-content:center;gap:18px}.brand-logos img{display:block;object-fit:contain;opacity:.82}.brand-logos .logo-dra{width:150px;height:38px}.brand-logos .logo-tr{width:42px;height:42px}.note{margin-top:18px;font-size:10px;color:#8b9390;letter-spacing:.12em;text-transform:uppercase}footer{margin-top:auto;padding-top:60px;color:#9aa19e;font-size:11px}
-@media(min-width:700px){main{padding-top:9vh}.avatar{width:220px;height:220px}.links{gap:16px}.link{min-height:62px;border-radius:20px;font-size:16px}}
-@media(max-width:480px){main{padding-left:18px;padding-right:18px}.avatar{width:180px;height:180px}h1{font-size:29px}.bio{font-size:14px;margin-bottom:25px}.link{min-height:56px;border-radius:16px;font-size:14px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.link{transition:none}}
-</style></head>
-<body><main>
-<section class="profile"><div class="avatar"><img src="tainara.jpg" alt="Dra. Tainara Rodrigues"></div><h1>Dra. Tainara Rodrigues</h1><div class="role">Ultrassonografia</div><p class="bio">Cuidado, precisão e tecnologia em diagnóstico por imagem.</p></section>
-<nav class="links" aria-label="Contato">
-<a class="link whatsapp" href="https://wa.me/557799918361" target="_blank" rel="noopener noreferrer"><span class="icon">◉</span><span>Falar pelo WhatsApp</span></a>
+:root{
+  --bg:#f4f2ed;--paper:rgba(255,255,255,.68);--ink:#1f2927;--muted:#68736f;
+  --accent:#315c54;--accent2:#244942;--line:rgba(49,92,84,.12);
+}
+*{box-sizing:border-box}
+html{min-height:100%;scroll-behavior:smooth}
+body{
+  margin:0;min-height:100vh;color:var(--ink);
+  font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 50% -5%,#fff 0,#f7f5f1 35%,#e9e7e1 100%);
+  display:flex;justify-content:center;
+}
+main{
+  width:100%;max-width:760px;min-height:100vh;
+  padding:clamp(34px,7vh,72px) 24px 32px;
+  display:flex;flex-direction:column;align-items:center;
+}
+.profile{text-align:center;width:100%;max-width:560px}
+.avatar{
+  width:210px;height:210px;border-radius:30px;margin:auto;overflow:hidden;
+  box-shadow:0 22px 52px rgba(39,75,69,.17);
+  border:4px solid rgba(255,255,255,.96);background:#e9ece9;
+  cursor:zoom-in;position:relative;
+}
+.avatar img{width:100%;height:100%;display:block;object-fit:contain;object-position:center}
+.avatar::after{
+  content:"⌕";position:absolute;right:10px;bottom:10px;width:34px;height:34px;
+  border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.9);
+  color:var(--accent);font-size:20px;box-shadow:0 5px 16px rgba(0,0,0,.12);
+}
+h1{
+  font-family:Georgia,serif;font-size:clamp(31px,5vw,43px);letter-spacing:-1px;
+  line-height:1.1;margin:22px 0 7px;font-weight:600;
+}
+.crm{
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:#7a8581;margin-top:4px;font-weight:650;
+}
+.role{
+  margin:14px 0 0;color:var(--accent);font-size:clamp(20px,3vw,25px);
+  line-height:1.15;font-weight:750;letter-spacing:.06em;text-transform:uppercase;
+}
+.bio{
+  font-size:15px;line-height:1.65;color:var(--muted);max-width:470px;
+  margin:14px auto 30px;
+}
+.links{width:100%;max-width:560px;display:grid;gap:14px}
+.link{
+  min-height:60px;display:flex;align-items:center;justify-content:center;gap:12px;
+  text-decoration:none;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2));
+  padding:16px 22px;border-radius:18px;font-size:15px;font-weight:700;
+  box-shadow:0 12px 30px rgba(39,75,69,.17);
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.link:hover{transform:translateY(-2px);box-shadow:0 17px 36px rgba(39,75,69,.22)}
+.link:focus-visible{outline:3px solid rgba(49,92,84,.28);outline-offset:4px}
+.icon{width:22px;height:22px;display:grid;place-items:center}
+.icon svg{width:21px;height:21px;fill:currentColor}
+.link.instagram{background:linear-gradient(135deg,#3b2b4e,#7d3e67 58%,#b76a55);box-shadow:0 12px 30px rgba(125,62,103,.16)}
+.link.phone{background:#fff;color:var(--accent);border:1px solid var(--line);box-shadow:0 10px 25px rgba(39,75,69,.09)}
+.brand-logos{
+  margin-top:34px;display:flex;align-items:center;justify-content:center;gap:18px;
+  padding-top:24px;border-top:1px solid var(--line);width:min(100%,560px);
+}
+.brand-logos img{display:block;object-fit:contain;opacity:.82}
+.brand-logos .logo-dra{width:150px;height:38px}
+.brand-logos .logo-tr{width:42px;height:42px}
+.note{margin-top:18px;font-size:10px;color:#8b9390;letter-spacing:.12em;text-transform:uppercase}
+footer{margin-top:auto;padding-top:55px;color:#9aa19e;font-size:11px}
+
+/* Visualização ampliada da foto */
+.lightbox{
+  position:fixed;inset:0;z-index:1000;background:rgba(15,22,20,.82);
+  display:none;align-items:center;justify-content:center;padding:24px;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+}
+.lightbox.open{display:flex}
+.lightbox img{
+  max-width:min(92vw,900px);max-height:88vh;width:auto;height:auto;
+  object-fit:contain;border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.4);
+}
+.close{
+  position:absolute;top:18px;right:18px;width:44px;height:44px;border:0;border-radius:50%;
+  background:rgba(255,255,255,.94);color:#1f2927;font-size:28px;line-height:1;cursor:pointer;
+}
+@media(min-width:700px){
+  main{padding-top:9vh}.avatar{width:230px;height:230px}
+  .links{gap:15px}.link{min-height:64px;border-radius:20px;font-size:16px}
+}
+@media(max-width:480px){
+  main{padding-left:18px;padding-right:18px}.avatar{width:190px;height:190px}
+  h1{font-size:30px}.role{font-size:20px}.bio{font-size:14px;margin-bottom:25px}
+  .link{min-height:57px;border-radius:16px;font-size:14px}
+  .brand-logos .logo-dra{width:135px;height:34px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}.link{transition:none}
+}
+</style>
+</head>
+<body>
+<main>
+<section class="profile">
+  <div class="avatar" id="photoTrigger" role="button" tabindex="0" aria-label="Ampliar foto da Dra. Tainara Rodrigues">
+    <img src="tainara.jpg" alt="Dra. Tainara Rodrigues">
+  </div>
+  <h1>Dra. Tainara Rodrigues</h1>
+  <div class="crm">CRM-BA 43828</div>
+  <div class="role">Ultrassonografia</div>
+  <p class="bio">Cuidado, precisão e tecnologia em diagnóstico por imagem.</p>
+</section>
+
+<nav class="links" aria-label="Contato e redes sociais">
+  <a class="link instagram" href="https://www.instagram.com/tainarards/" target="_blank" rel="noopener noreferrer">
+    <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg></span>
+    <span>Instagram</span>
+  </a>
+  <a class="link whatsapp" href="https://wa.me/557799918361" target="_blank" rel="noopener noreferrer">
+    <span class="icon">◉</span><span>Falar pelo WhatsApp</span>
+  </a>
+  <a class="link phone" href="tel:+557799918361">
+    <span class="icon">☎</span><span>+55 77 9991-8361</span>
+  </a>
 </nav>
-<div class="brand-logos"><img class="logo-dra" src="logo-dra-tainara.png" alt="Dra. Tainara Rodrigues"><img class="logo-tr" src="logo-tr.png" alt="TR"></div><div class="note">Contato profissional</div><footer>© 2026 Dra. Tainara Rodrigues</footer>
-</main></body></html>
+
+<div class="brand-logos">
+  <img class="logo-dra" src="logo-dra-tainara.png" alt="Dra. Tainara Rodrigues">
+  <img class="logo-tr" src="logo-tr.png" alt="TR">
+</div>
+<div class="note">Contato profissional</div>
+<footer>© 2026 Dra. Tainara Rodrigues</footer>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="close" id="closeLightbox" aria-label="Fechar">×</button>
+  <img src="tainara.jpg" alt="Dra. Tainara Rodrigues — foto ampliada">
+</div>
+
+<script>
+const trigger=document.getElementById('photoTrigger');
+const box=document.getElementById('lightbox');
+const close=document.getElementById('closeLightbox');
+function openPhoto(){box.classList.add('open');document.body.style.overflow='hidden';close.focus()}
+function closePhoto(){box.classList.remove('open');document.body.style.overflow=''}
+trigger.addEventListener('click',openPhoto);
+trigger.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openPhoto()}});
+close.addEventListener('click',closePhoto);
+box.addEventListener('click',e=>{if(e.target===box)closePhoto()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&box.classList.contains('open'))closePhoto()});
+</script>
+</body>
+</html>
