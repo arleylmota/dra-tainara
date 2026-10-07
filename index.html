@@ -67,10 +67,9 @@ h1{
 .icon{width:22px;height:22px;display:grid;place-items:center}
 .icon svg{width:21px;height:21px;fill:currentColor}
 .link.instagram{background:linear-gradient(135deg,#3b2b4e,#7d3e67 58%,#b76a55);box-shadow:0 12px 30px rgba(125,62,103,.16)}
-.link.phone{background:#fff;color:var(--accent);border:1px solid var(--line);box-shadow:0 10px 25px rgba(39,75,69,.09)}
 .brand-logos{
-  margin-top:34px;display:flex;align-items:center;justify-content:center;gap:18px;
-  padding-top:24px;border-top:1px solid var(--line);width:min(100%,560px);
+  margin-top:34px;display:flex;align-items:center;justify-content:center;gap:22px;
+  padding-top:18px;width:min(100%,560px);
 }
 .brand-logos img{display:block;object-fit:contain;opacity:.82}
 .brand-logos .logo-dra{width:150px;height:38px}
@@ -101,7 +100,9 @@ footer{margin-top:auto;padding-top:55px;color:#9aa19e;font-size:11px}
   main{padding-left:18px;padding-right:18px}.avatar{width:190px;height:190px}
   h1{font-size:30px}.role{font-size:20px}.bio{font-size:14px;margin-bottom:25px}
   .link{min-height:57px;border-radius:16px;font-size:14px}
-  .brand-logos .logo-dra{width:135px;height:34px}
+  .brand-logos{gap:16px;margin-top:30px}
+  .brand-logos .logo-dra{width:170px;height:auto}
+  .brand-logos .logo-tr{width:42px;height:42px}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}.link{transition:none}
@@ -128,16 +129,12 @@ footer{margin-top:auto;padding-top:55px;color:#9aa19e;font-size:11px}
   <a class="link whatsapp" href="https://wa.me/557799918361" target="_blank" rel="noopener noreferrer">
     <span class="icon">◉</span><span>Falar pelo WhatsApp</span>
   </a>
-  <a class="link phone" href="tel:+557799918361">
-    <span class="icon">☎</span><span>+55 77 9991-8361</span>
-  </a>
 </nav>
 
 <div class="brand-logos">
   <img class="logo-dra" src="logo-dra-tainara.png" alt="Dra. Tainara Rodrigues">
   <img class="logo-tr" src="logo-tr.png" alt="TR">
 </div>
-<div class="note">Contato profissional</div>
 <footer>© 2026 Dra. Tainara Rodrigues</footer>
 </main>
 
