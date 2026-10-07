@@ -13,199 +13,178 @@
 <title>Dra. Tainara Rodrigues | Ultrassonografia</title>
 <style>
 :root{
-  --bg:#f5f4ef;--paper:rgba(255,255,255,.68);--ink:#1f2927;--muted:#6b7268;
-  --accent:#2c4a3e;--accent2:#344e43;--line:rgba(44,74,62,.14);
-  --serif:Georgia,"Times New Roman",serif;
+  --bg:#f5f4ef;--card:#ffffff;--ink:#1e2724;--muted:#6e776f;
+  --accent:#23463a;--accent2:#2f5a4b;--line:rgba(35,70,58,.12);
+  --wa:#1a7a4a;--wa2:#14914f;
+  --serif:"Iowan Old Style",Georgia,"Times New Roman",serif;
   --sans:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --r:18px;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
-html{min-height:100%}
+html{height:100dvh}
 body{
-  margin:0;min-height:100vh;color:var(--ink);
+  margin:0;height:100dvh;max-height:100dvh;overflow:hidden;color:var(--ink);
   font-family:var(--sans);
-  background:var(--bg);
-  display:flex;align-items:center;justify-content:center;padding:26px 20px;
-  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  background:
+    radial-gradient(600px 380px at 15% 0%,rgba(47,90,75,.10),transparent 60%),
+    radial-gradient(560px 380px at 90% 12%,rgba(183,106,85,.08),transparent 60%),
+    radial-gradient(700px 520px at 50% 110%,rgba(35,70,58,.08),transparent 62%),
+    var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  padding:calc(10px + env(safe-area-inset-top)) 16px calc(10px + env(safe-area-inset-bottom));
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(rgba(35,70,58,.06) 1px,transparent 1px);
+  background-size:22px 22px;
+  mask-image:radial-gradient(70% 60% at 50% 30%,black,transparent);
 }
 main{
-  position:relative;z-index:1;
-  width:100%;max-width:480px;
-  display:flex;flex-direction:column;align-items:center;
-  padding:0 4px 26px;
+  position:relative;z-index:1;width:100%;max-width:410px;height:100%;max-height:760px;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 24px 60px rgba(35,70,58,.12),0 2px 0 rgba(255,255,255,.9) inset;
+  border-radius:28px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:20px 22px 16px;overflow:hidden;
 }
+main::before{
+  content:"";position:absolute;top:0;left:24px;right:24px;height:3px;border-radius:999px;
+  background:linear-gradient(90deg,transparent,var(--accent) 20%,var(--accent) 80%,transparent);
+  opacity:.9;
+}
+.topbar{width:100%;display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.brand{display:flex;align-items:center;gap:8px;color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.brand img{width:26px;height:26px;object-fit:contain;border-radius:8px;background:#fff;border:1px solid var(--line);padding:2px}
+.live{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--accent);background:rgba(35,70,58,.08);border:1px solid var(--line);padding:6px 10px;border-radius:999px}
+.live i{width:7px;height:7px;border-radius:50%;background:#1faa5c;box-shadow:0 0 0 4px rgba(31,170,92,.18);display:block}
 .profile{text-align:center;width:100%;display:flex;flex-direction:column;align-items:center}
-.avatarWrap{position:relative;display:flex;align-items:center;justify-content:center}
-.echo{position:absolute;inset:-22px;display:grid;place-items:center;pointer-events:none}
-.echo svg{width:min(340px,100vw);height:min(340px,100vw)}
-.echo circle{
-  fill:none;stroke:var(--accent);stroke-width:1;
-  transform-box:fill-box;transform-origin:center;
-  animation:echo 7s ease-out infinite;opacity:0;
-}
-.echo circle:nth-child(2){animation-delay:2.33s}
-.echo circle:nth-child(3){animation-delay:4.66s}
-@keyframes echo{
-  0%{transform:scale(.55);opacity:0}
-  16%{opacity:.16}
-  68%{transform:scale(1.12);opacity:0}
-  100%{transform:scale(1.12);opacity:0}
-}
-.avatar{
-  width:150px;height:150px;border-radius:30px;margin:0 auto;
-  overflow:hidden;
-  box-shadow:0 18px 40px rgba(44,74,62,.14);
-  border:3px solid rgba(255,255,255,.95);background:#efeae2;
-  cursor:zoom-in;position:relative;
-}
-.avatar img{width:100%;height:100%;display:block;object-fit:cover;object-position:center top}
-.avatar::after{
-  content:"⌕";position:absolute;right:7px;bottom:7px;width:30px;height:30px;
-  border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.94);
-  color:var(--accent);font-size:17px;line-height:1;box-shadow:0 4px 12px rgba(0,0,0,.08);
-}
-.rule{height:1px;width:60px;background:var(--line);margin:14px auto}
-.name{
-  font-family:var(--serif);font-size:clamp(28px,7vw,35px);letter-spacing:-.5px;
-  line-height:1.05;margin:0 0 3px;font-weight:600;color:#1c2421;
-}
-.crm{
-  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
-  color:#7a827a;margin-top:3px;font-weight:650;
-}
-.role{
-  margin:9px 0 0;color:var(--accent);font-size:clamp(17px,3.4vw,21px);
-  line-height:1.1;letter-spacing:.03em;text-transform:uppercase;font-weight:750;
-}
-.bio{
-  font-size:13.5px;line-height:1.55;color:var(--muted);
-  max-width:330px;margin:8px auto 0;text-align:center;
-}
-.links{
-  width:100%;max-width:360px;display:flex;flex-direction:column;gap:11px;
-  margin-top:24px;
-}
-.link{
-  flex:1;min-height:50px;display:flex;align-items:center;justify-content:center;gap:11px;
-  text-decoration:none;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2));
-  padding:12px 18px;border-radius:999px;font-size:14px;font-weight:650;
-  box-shadow:0 10px 24px rgba(44,74,62,.13);
-  transition:transform .16s ease,box-shadow .16s ease;
-}
-.link:hover{transform:translateY(-2px);box-shadow:0 13px 28px rgba(44,74,62,.17)}
-.link:focus-visible{outline:3px solid rgba(44,74,62,.32);outline-offset:3px}
-.icon{width:20px;height:20px;display:grid;place-items:center;flex:0 0 20px}
-.icon svg{width:19px;height:19px;fill:currentColor}
-.link.instagram{background:linear-gradient(135deg,#3b2b4e,#7d3e67 58%,#b76a55);box-shadow:0 10px 24px rgba(125,62,103,.13)}
-.share{
-  margin-top:14px;display:inline-flex;align-items:center;gap:8px;
-  background:none;border:0;cursor:pointer;color:var(--ink);
-  font:inherit;font-size:13px;font-weight:600;letter-spacing:.01em;
-  padding:9px 15px;border-radius:999px;transition:color .16s ease;
-}
+.avatarWrap{position:relative;display:flex;align-items:center;justify-content:center;margin-top:2px;width:100%}
+.echo{position:absolute;left:50%;top:50%;width:190px;height:190px;transform:translate(-50%,-50%);display:grid;place-items:center;pointer-events:none}
+.echo svg{width:190px;height:190px;display:block;overflow:visible}
+.echo circle{fill:none;stroke:var(--accent);stroke-width:1;transform-box:fill-box;transform-origin:center;animation:echo 6s ease-out infinite;opacity:0}
+.echo circle:nth-child(2){animation-delay:2s}
+.echo circle:nth-child(3){animation-delay:4s}
+@keyframes echo{0%{transform:scale(.62);opacity:0}16%{opacity:.18}68%{transform:scale(1.08);opacity:0}100%{transform:scale(1.08);opacity:0}}
+.avatar{width:118px;height:118px;border-radius:32px;margin:0 auto;overflow:hidden;box-shadow:0 16px 36px rgba(35,70,58,.18);border:3px solid #fff;background:#efeae2;cursor:zoom-in;position:relative}
+.avatar img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 12%}
+.verified{position:absolute;right:-6px;bottom:8px;width:32px;height:32px;border-radius:50%;background:var(--accent);border:3px solid #fff;display:grid;place-items:center;box-shadow:0 6px 16px rgba(0,0,0,.18)}
+.verified svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.name{font-family:var(--serif);font-size:30px;letter-spacing:-.4px;line-height:1.02;margin:12px 0 0;font-weight:700;color:#182019}
+.crm{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--accent);margin-top:8px;font-weight:800;padding:6px 11px;border-radius:999px}
+.role{margin:9px 0 0;color:var(--accent);font-size:15px;line-height:1.1;letter-spacing:.18em;text-transform:uppercase;font-weight:800}
+.bio{font-size:13.2px;line-height:1.5;color:var(--muted);max-width:300px;margin:7px auto 0;text-align:center}
+.chips{display:flex;gap:7px;justify-content:center;flex-wrap:nowrap;margin-top:11px}
+.chip{font-size:11px;font-weight:700;color:var(--accent);background:rgba(35,70,58,.07);border:1px solid var(--line);padding:6px 10px;border-radius:999px;white-space:nowrap}
+.divider{width:100%;display:flex;align-items:center;gap:10px;margin:14px 0 12px;color:var(--accent);opacity:.9}
+.divider::before,.divider::after{content:"";height:1px;flex:1;background:var(--line)}
+.divider svg{width:46px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.links{width:100%;display:flex;flex-direction:column;gap:10px}
+.link{min-height:54px;display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;padding:12px 14px;border-radius:var(--r);font-size:14.5px;font-weight:750;transition:transform .16s ease,box-shadow .16s ease,filter .16s ease;position:relative;overflow:hidden}
+.link small{display:block;font-size:11.5px;font-weight:600;opacity:.85;line-height:1.2}
+.link .txt{display:flex;flex-direction:column;line-height:1.25}
+.link:hover{transform:translateY(-1px);filter:brightness(1.03)}
+.link:active{transform:scale(.99)}
+.link:focus-visible{outline:3px solid rgba(35,70,58,.35);outline-offset:3px}
+.link.instagram{background:linear-gradient(135deg,#3a2b55,#8a3d6e 55%,#c96a4a);box-shadow:0 12px 26px rgba(138,61,110,.22)}
+.link.whatsapp{background:linear-gradient(135deg,var(--wa),var(--wa2));box-shadow:0 12px 26px rgba(20,145,79,.22)}
+.icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;flex:0 0 42px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.25)}
+.icon svg{width:21px;height:21px;fill:#fff}
+.arrow{margin-left:auto;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.18);font-size:16px}
+.meta{width:100%;display:flex;align-items:center;justify-content:center;gap:14px;margin-top:12px;color:var(--muted);font-size:11.5px;font-weight:600}
+.share{display:inline-flex;align-items:center;gap:7px;background:none;border:0;cursor:pointer;color:var(--ink);font:inherit;font-size:12.5px;font-weight:700;padding:8px 12px;border-radius:999px}
 .share:hover{color:var(--accent)}
-.share:focus-visible{outline:3px solid rgba(44,74,62,.32);outline-offset:3px}
 .share svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.toast{
-  position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(10px);
-  background:#1f2927;color:#fff;font-size:12.5px;font-weight:600;padding:9px 16px;
-  border-radius:999px;opacity:0;pointer-events:none;z-index:1200;
-  transition:opacity .22s ease,transform .22s ease;
-}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(10px);background:#1e2724;color:#fff;font-size:12.5px;font-weight:600;padding:9px 16px;border-radius:999px;opacity:0;pointer-events:none;z-index:1200;transition:opacity .22s ease,transform .22s ease}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-.watermark{
-  position:fixed;right:22px;bottom:16px;width:110px;height:110px;
-  display:flex;align-items:center;justify-content:center;opacity:.09;pointer-events:none;z-index:0;
-}
-.watermark img{width:100%;height:100%;object-fit:contain;display:block}
-footer{
-  margin-top:8px;color:#7c8580;font-size:11px;letter-spacing:.02em;
-}
+footer{margin-top:8px;color:#8a938c;font-size:11px;letter-spacing:.02em}
 footer a{color:inherit;text-decoration:none}
-footer a:hover{color:var(--accent);text-decoration:underline}
-.lightbox{
-  position:fixed;inset:0;z-index:1000;background:rgba(15,22,20,.82);
-  display:none;align-items:center;justify-content:center;padding:22px;
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-}
+.lightbox{position:fixed;inset:0;z-index:1000;background:rgba(15,22,20,.82);display:none;align-items:center;justify-content:center;padding:22px;backdrop-filter:blur(10px)}
 .lightbox.open{display:flex}
-.lightbox img{
-  max-width:min(92vw,880px);max-height:88vh;width:auto;height:auto;
-  object-fit:contain;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.42);
+.lightbox img{max-width:min(92vw,880px);max-height:88vh;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.42)}
+.close{position:absolute;top:12px;right:12px;width:40px;height:40px;border:0;border-radius:50%;background:rgba(255,255,255,.95);color:#1f2927;font-size:26px;line-height:1;cursor:pointer}
+@media(max-height:700px){
+  main{padding:14px 18px 12px;border-radius:22px;max-height:100%}
+  .avatar{width:92px;height:92px;border-radius:24px}
+  .echo{width:150px;height:150px}
+  .echo svg{width:150px;height:150px}
+  .name{font-size:24px;margin-top:8px}
+  .crm{margin-top:6px;padding:5px 9px}
+  .role{font-size:13px;margin-top:6px}
+  .bio{font-size:12.2px;margin-top:5px}
+  .chips{margin-top:8px}
+  .divider{margin:10px 0 9px}
+  .link{min-height:50px;padding:10px 12px}
+  .meta{margin-top:8px}
 }
-.close{
-  position:absolute;top:12px;right:12px;width:40px;height:40px;border:0;border-radius:50%;
-  background:rgba(255,255,255,.95);color:#1f2927;font-size:26px;line-height:1;cursor:pointer;
-  transition:background .16s ease;
-}
-.close:hover{background:#fff}
-@media(min-width:640px){
-  main{padding:0 8px 30px}
-  .avatar{width:168px;height:168px}
-  .links{gap:12px}
-  .link{min-height:54px;padding:14px 20px;font-size:14.5px}
-  .watermark{right:26px;bottom:18px;width:120px;height:120px}
-}
-@media(max-width:400px){
-  body{padding:18px 14px}
-  .avatar{width:138px;height:138px}
+@media(max-width:380px){
+  main{padding:16px 16px 12px}
+  .chips{flex-wrap:wrap}
   .name{font-size:26px}
-  .role{font-size:16px}
-  .link{padding:11px 15px;font-size:13.5px}
-  .watermark{width:88px;height:88px;right:16px;bottom:14px}
 }
 @media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .link,.share,.close,.avatar,.watermark{transition:none}
-  .echo circle{animation:none;opacity:.12}
+  .link,.share,.close,.avatar{transition:none}
+  .echo circle{animation:none;opacity:.1}
 }
 </style>
 </head>
 <body>
 <main>
-<section class="profile">
-  <div class="avatarWrap">
-    <div class="echo" aria-hidden="true">
-      <svg viewBox="0 0 200 200">
-        <circle cx="100" cy="100" r="52"/>
-        <circle cx="100" cy="100" r="70"/>
-        <circle cx="100" cy="100" r="86"/>
-      </svg>
-    </div>
-    <div class="avatar" id="photoTrigger" role="button" tabindex="0" aria-label="Ampliar foto da Dra. Tainara Rodrigues">
-      <img src="tainara.jpg" alt="Dra. Tainara Rodrigues">
-    </div>
+  <div class="topbar">
+    <div class="brand"><img src="logo-tr-watermark.png" alt=""> Dra. Tainara</div>
+    <div class="live"><i></i> Agenda aberta</div>
   </div>
 
-  <h1 class="name">Dra. Tainara Rodrigues</h1>
-  <div class="crm">CRM-BA 43828</div>
-  <div class="role">Ultrassonografia</div>
+  <section class="profile">
+    <div class="avatarWrap">
+      <div class="echo" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="52"/><circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="86"/></svg>
+      </div>
+      <div style="position:relative">
+        <div class="avatar" id="photoTrigger" role="button" tabindex="0" aria-label="Ampliar foto da Dra. Tainara Rodrigues">
+          <img src="tainara.jpg" alt="Dra. Tainara Rodrigues">
+        </div>
+        <div class="verified" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.5 12.5l5 5 10-11"/></svg></div>
+      </div>
+    </div>
+    <h1 class="name">Dra. Tainara Rodrigues</h1>
+    <div class="crm">CRM-BA 43828</div>
+    <div class="role">Ultrassonografia</div>
+    <p class="bio">Cuidado, precisão e tecnologia em diagnóstico por imagem.</p>
+    <div class="chips"><span class="chip">Diagnóstico por imagem</span><span class="chip">Atendimento humanizado</span></div>
+  </section>
 
-  <p class="bio">Cuidado, precisão e tecnologia em diagnóstico por imagem.</p>
-  <div class="rule" aria-hidden="true"></div>
-</section>
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 46 14"><path d="M1 7h10l2-4 3 8 3-10 3 9 2-3h21"/></svg>
+  </div>
 
-<nav class="links" aria-label="Contato e redes sociais">
-  <a class="link instagram" href="https://www.instagram.com/tainarards/" target="_blank" rel="noopener noreferrer">
-    <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg></span>
-    <span>Instagram</span>
-  </a>
-  <a class="link whatsapp" href="https://wa.me/557799918361" target="_blank" rel="noopener noreferrer">
-    <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></span>
-    <span>Falar pelo WhatsApp</span>
-  </a>
-</nav>
+  <nav class="links" aria-label="Contato e redes sociais">
+    <a class="link whatsapp" href="https://wa.me/557799918361" target="_blank" rel="noopener noreferrer">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></span>
+      <span class="txt">Agendar pelo WhatsApp<small>Resposta rápida no horário comercial</small></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="link instagram" href="https://www.instagram.com/tainarards/" target="_blank" rel="noopener noreferrer">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg></span>
+      <span class="txt">Instagram<small>@tainarards • bastidores e dicas</small></span>
+      <span class="arrow">→</span>
+    </a>
+  </nav>
 
-<button class="share" id="shareBtn" type="button" aria-label="Compartilhar o link desta página">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V4m0 0L8 8m4-4 4 4"/><path d="M5 12v7a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 19v-7"/></svg>
-  <span>Compartilhar este link</span>
-</button>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="meta">
+    <button class="share" id="shareBtn" type="button" aria-label="Compartilhar o link desta página">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V4m0 0L8 8m4-4 4 4"/><path d="M5 12v7a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 19v-7"/></svg>
+      <span>Compartilhar</span>
+    </button>
+  </div>
 
-<footer>© <span id="year">2026</span> <a href="https://dra-tainara-rodrigues.pages.dev/">Dra. Tainara Rodrigues</a></footer>
+  <footer>© <span id="year">2026</span> - Dra. Tainara Rodrigues</footer>
 </main>
 
-<div class="watermark" aria-hidden="true"><img src="logo-tr-watermark.png" alt=""></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada">
   <button class="close" id="closeLightbox" aria-label="Fechar">×</button>
@@ -216,38 +195,21 @@ footer a:hover{color:var(--accent);text-decoration:underline}
 const trigger=document.getElementById('photoTrigger');
 const box=document.getElementById('lightbox');
 const close=document.getElementById('closeLightbox');
-function openPhoto(){box.classList.add('open');document.body.style.overflow='hidden';close.focus()}
-function closePhoto(){box.classList.remove('open');document.body.style.overflow=''}
+function openPhoto(){box.classList.add('open');close.focus()}
+function closePhoto(){box.classList.remove('open')}
 trigger.addEventListener('click',openPhoto);
 trigger.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openPhoto()}});
 close.addEventListener('click',closePhoto);
 box.addEventListener('click',e=>{if(e.target===box)closePhoto()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&box.classList.contains('open'))closePhoto()});
-
 const shareBtn=document.getElementById('shareBtn');
 const toast=document.getElementById('toast');
 let toastTimer;
-function showToast(msg){
-  toast.textContent=msg;toast.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer=setTimeout(()=>toast.classList.remove('show'),2200);
-}
+function showToast(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2200)}
 shareBtn.addEventListener('click',async()=>{
   const data={title:document.title,text:'Dra. Tainara Rodrigues — Ultrassonografia',url:'https://dra-tainara-rodrigues.pages.dev/'};
-  try{
-    if(navigator.share){await navigator.share(data);return}
-    throw new Error('no-share');
-  }catch(err){
-    if(err&&err.name==='AbortError')return;
-    try{
-      await navigator.clipboard.writeText(data.url);
-      showToast('Link copiado!');
-    }catch(e){
-      showToast(data.url);
-    }
-  }
+  try{if(navigator.share){await navigator.share(data);return}throw new Error('no-share')}catch(err){if(err&&err.name==='AbortError')return;try{await navigator.clipboard.writeText(data.url);showToast('Link copiado!')}catch(e){showToast(data.url)}}
 });
-
 document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 </body>
