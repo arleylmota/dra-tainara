@@ -71,14 +71,12 @@ main::before{
 @keyframes echo{0%{transform:scale(.62);opacity:0}16%{opacity:.18}68%{transform:scale(1.08);opacity:0}100%{transform:scale(1.08);opacity:0}}
 .avatar{width:118px;height:118px;border-radius:32px;margin:0 auto;overflow:hidden;box-shadow:0 16px 36px rgba(35,70,58,.18);border:3px solid #fff;background:#efeae2;cursor:zoom-in;position:relative}
 .avatar img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 12%}
-.verified{position:absolute;right:-6px;bottom:8px;width:32px;height:32px;border-radius:50%;background:var(--accent);border:3px solid #fff;display:grid;place-items:center;box-shadow:0 6px 16px rgba(0,0,0,.18)}
-.verified svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.verified{position:absolute;right:-8px;bottom:6px;width:34px;height:34px;display:grid;place-items:center;filter:drop-shadow(0 4px 10px rgba(0,149,246,.45))}
+.verified svg{width:34px;height:34px;display:block}
 .name{font-family:var(--serif);font-size:30px;letter-spacing:-.4px;line-height:1.02;margin:12px 0 0;font-weight:700;color:#182019}
 .crm{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--accent);margin-top:8px;font-weight:800;padding:6px 11px;border-radius:999px}
 .role{margin:9px 0 0;color:var(--accent);font-size:15px;line-height:1.1;letter-spacing:.18em;text-transform:uppercase;font-weight:800}
 .bio{font-size:13.2px;line-height:1.5;color:var(--muted);max-width:300px;margin:7px auto 0;text-align:center}
-.chips{display:flex;gap:7px;justify-content:center;flex-wrap:nowrap;margin-top:11px}
-.chip{font-size:11px;font-weight:700;color:var(--accent);background:rgba(35,70,58,.07);border:1px solid var(--line);padding:6px 10px;border-radius:999px;white-space:nowrap}
 .divider{width:100%;display:flex;align-items:center;gap:10px;margin:14px 0 12px;color:var(--accent);opacity:.9}
 .divider::before,.divider::after{content:"";height:1px;flex:1;background:var(--line)}
 .divider svg{width:46px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
@@ -115,14 +113,12 @@ footer a{color:inherit;text-decoration:none}
   .crm{margin-top:6px;padding:5px 9px}
   .role{font-size:13px;margin-top:6px}
   .bio{font-size:12.2px;margin-top:5px}
-  .chips{margin-top:8px}
   .divider{margin:10px 0 9px}
   .link{min-height:50px;padding:10px 12px}
   .meta{margin-top:8px}
 }
 @media(max-width:380px){
   main{padding:16px 16px 12px}
-  .chips{flex-wrap:wrap}
   .name{font-size:26px}
 }
 @media(prefers-reduced-motion:reduce){
@@ -147,14 +143,13 @@ footer a{color:inherit;text-decoration:none}
         <div class="avatar" id="photoTrigger" role="button" tabindex="0" aria-label="Ampliar foto da Dra. Tainara Rodrigues">
           <img src="tainara.jpg" alt="Dra. Tainara Rodrigues">
         </div>
-        <div class="verified" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.5 12.5l5 5 10-11"/></svg></div>
+        <div class="verified" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M23 12l-2.44-2.78.34-3.68-3.61-.82-1.89-3.22L12 3l-3.4-1.5-1.89 3.19-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.22L12 21l3.4 1.5 1.89-3.22 3.61-.82-.34-3.68L23 12z" fill="#0095F6" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 16.6l-3.2-3.2 1.4-1.4 1.8 1.8 5.2-5.2 1.4 1.4z" fill="#fff"/></svg></div>
       </div>
     </div>
     <h1 class="name">Dra. Tainara Rodrigues</h1>
     <div class="crm">CRM-BA 43828</div>
     <div class="role">Ultrassonografia</div>
     <p class="bio">Cuidado, precisão e tecnologia em diagnóstico por imagem.</p>
-    <div class="chips"><span class="chip">Diagnóstico por imagem</span><span class="chip">Atendimento humanizado</span></div>
   </section>
 
   <div class="divider" aria-hidden="true">
